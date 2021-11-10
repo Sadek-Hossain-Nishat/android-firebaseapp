@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "863733886795",
+    "project_id": "fir-app-b51a1",
+    "storage_bucket": "fir-app-b51a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863733886795:android:a060f91963486c61d542ce",
+        "android_client_info": {
+          "package_name": "my.android.exercise.according.to.video3.firebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863733886795-os6lqd7nf2mgpgq9htddlsgilbdrsdb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp6lmIpaJ2ri7gID4BB6yCm-Gc-R6ZEPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863733886795-os6lqd7nf2mgpgq9htddlsgilbdrsdb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,66 @@
+
+
+package my.android.exercise.according.to.video3.firebaseapp;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+public class MainActivity extends AppCompatActivity {
+    TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        textView=findViewById(R.id.textview);
+
+        //making reference to our database
+        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        DatabaseReference myRef=database.getReference("message");
+
+        //write message to database
+        //myRef.setValue("WellCome EveryBody in The FireBase");
+
+        //reading data from firebase
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //here we want to execute some code when receiving data
+                //String s= (String) dataSnapshot.getValue();
+                //textView.setText(""+s);
+
+               // Log.v("taggy",""+dataSnapshot.getValue());
+
+
+
+                //For Loop in order to get each snapshot value
+
+                if (dataSnapshot.getValue()!=null){
+                    for (DataSnapshot snapshot:dataSnapshot.getChildren()){
+                        String k=""+snapshot.getValue();
+                        String k2=""+snapshot.getKey();
+                        Log.v("tagy",""+k);
+                        Log.v("tagy2",""+k2);
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+}
